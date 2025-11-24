@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    // Quantidade de casas que cada peça deverá percorrer
+    // Quantidade de casas para cada peça
     int casasTorre = 5;
     int casasBispo = 5;
     int casasRainha = 8;
@@ -9,8 +9,6 @@ int main() {
     // ================================
     // MOVIMENTO DA TORRE (FOR)
     // ================================
-    // A torre se movimenta em linha reta.
-    // Aqui, vamos simular 5 casas para a direita.
     printf("Movimento da Torre:\n");
     for (int i = 0; i < casasTorre; i++) {
         printf("Direita\n");
@@ -20,8 +18,6 @@ int main() {
     // ================================
     // MOVIMENTO DO BISPO (WHILE)
     // ================================
-    // O bispo se movimenta apenas na diagonal.
-    // Vamos simular 5 casas para cima e direita.
     printf("Movimento do Bispo:\n");
     int contadorBispo = 0;
     while (contadorBispo < casasBispo) {
@@ -33,14 +29,40 @@ int main() {
     // ================================
     // MOVIMENTO DA RAINHA (DO-WHILE)
     // ================================
-    // A rainha se move em todas as direções.
-    // Aqui vamos simular 8 casas para a esquerda.
     printf("Movimento da Rainha:\n");
     int contadorRainha = 0;
     do {
         printf("Esquerda\n");
         contadorRainha++;
     } while (contadorRainha < casasRainha);
+    printf("\n");
+
+    // ================================
+    // MOVIMENTO DO CAVALO (FOR + WHILE)
+    // ================================
+    /*
+        O cavalo deve se mover:
+        - 2 casas para baixo
+        - 1 casa para a esquerda
+
+        Usaremos:
+        → Loop externo FOR para as duas casas para baixo
+        → Loop interno WHILE para a última casa à esquerda
+    */
+
+    printf("Movimento do Cavalo:\n");
+
+    // Movimento em "L": duas casas para baixo
+    for (int i = 0; i < 2; i++) {
+        printf("Baixo\n");
+    }
+
+    // Agora o movimento perpendicular: uma casa para a esquerda
+    int contadorL = 0;
+    while (contadorL < 1) {
+        printf("Esquerda\n");
+        contadorL++;
+    }
 
     return 0;
 }
